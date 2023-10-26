@@ -44,7 +44,7 @@ class AboutJob extends Component {
       const fetchedJobData = await responseJobData.json()
       const updatedJobDetailsData = [fetchedJobData.job_details].map(
         eachItem => ({
-          componyLogoUrl: eachItem.compony_logo_url,
+          componyLogoUrl: eachItem.company_logo_url,
           componyWebsiteUrl: eachItem.compony_website_url,
           employmentType: eachItem.employment_type,
           id: eachItem.id,

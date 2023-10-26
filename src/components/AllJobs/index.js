@@ -115,7 +115,7 @@ class AllJobs extends Component {
     if (response.ok === true) {
       const filteredJobsList = data.jobs.map(each => ({
         id: each.id,
-        componyLogoUrl: each.compony_logo_url,
+        componyLogoUrl: each.company_logo_url,
         employmentType: each.employment_type,
         jobDescription: each.job_description,
         location: each.location,
@@ -231,7 +231,7 @@ class AllJobs extends Component {
         />
         <h1 className="failure-heading">Oops! Something Went Wrong</h1>
         <p className="failure-paragraph">
-          we cannot seen to find the page you are looking for
+          We cannot seem to find the page you are looking for
         </p>
         <div className="job-failure-btn-container">
           <button
@@ -239,7 +239,7 @@ class AllJobs extends Component {
             type="button"
             onClick={this.onRetryJobs}
           >
-            retry
+            Retry
           </button>
         </div>
       </div>
@@ -311,7 +311,7 @@ class AllJobs extends Component {
       case apiStatusConstants.failure:
         return this.onFailJobsView()
       case apiStatusConstants.success:
-        return this.onSuccessJobsView()
+        return this.onSuccessJobView()
       default:
         return null
     }
