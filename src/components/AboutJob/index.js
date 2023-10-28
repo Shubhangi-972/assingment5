@@ -44,14 +44,14 @@ class AboutJob extends Component {
       const fetchedJobData = await responseJobData.json()
       const updatedJobDetailsData = [fetchedJobData.job_details].map(
         eachItem => ({
-          componyLogoUrl: eachItem.company_logo_url,
-          componyWebsiteUrl: eachItem.compony_website_url,
+          companyLogoUrl: eachItem.company_logo_url,
+          companyWebsiteUrl: eachItem.company_website_url,
           employmentType: eachItem.employment_type,
           id: eachItem.id,
           jobDescription: eachItem.job_description,
-          lifeAtCompony: {
-            description: eachItem.life_at_compony.description,
-            imageUrl: eachItem.life_at_compony.image_url,
+          lifeAtCompany: {
+            description: eachItem.life_at_company.description,
+            imageUrl: eachItem.life_at_company.image_url,
           },
           location: eachItem.location,
           packagePerAnnum: eachItem.package_per_annum,
@@ -66,7 +66,7 @@ class AboutJob extends Component {
 
       const updatedSimilarJobDetails = fetchedJobData.similar_jobs.map(
         eachItem => ({
-          componyLogoUrl: eachItem.compony_logo_url,
+          companyLogoUrl: eachItem.company_logo_url,
           id: eachItem.id,
           jobDescription: eachItem.job_description,
           employmentType: eachItem.employment_type,
@@ -91,12 +91,12 @@ class AboutJob extends Component {
     const {jobDataDetails, similarJobsData} = this.state
     if (jobDataDetails.length > 1) {
       const {
-        componyLogoUrl,
-        componyWebsiteUrl,
+        companyLogoUrl,
+        companyWebsiteUrl,
         employmentType,
         id,
         jobDescription,
-        lifeAtCompony,
+        lifeAtCompany,
         location,
         packagePerAnnum,
         rating,
@@ -110,8 +110,8 @@ class AboutJob extends Component {
               <div className="image-title-container">
                 <img
                   className="compony-logo"
-                  src={componyLogoUrl}
-                  alt="job details compony logo"
+                  src={companyLogoUrl}
+                  alt="job details company logo"
                 />
                 <div className="title-rating-container">
                   <h1 className="title-heading">{title}</h1>
@@ -140,7 +140,7 @@ class AboutJob extends Component {
             <div className="second-part-container">
               <div className="description-visit-container">
                 <h1 className="description-job-heading">Description</h1>
-                <a className="visit-anchor" href={componyWebsiteUrl}>
+                <a className="visit-anchor" href={companyWebsiteUrl}>
                   Visit <BiLinkExternal />
                 </a>
               </div>
@@ -161,10 +161,10 @@ class AboutJob extends Component {
             </ul>
             <div className="compony-life-img-container">
               <div className="life-heading-para-container">
-                <h1>Life at Compony</h1>
-                <p>{lifeAtCompony.description}</p>
+                <h1>Life at Company</h1>
+                <p>{lifeAtCompany.description}</p>
               </div>
-              <img src={lifeAtCompony.imageUrl} alt="life at compony" />
+              <img src={lifeAtCompany.imageUrl} alt="life at company" />
             </div>
           </div>
           <h1 className="similar-job-heading">Similar Jobs</h1>
@@ -194,7 +194,7 @@ class AboutJob extends Component {
         alt="failure view"
       />
       <h1>Oops! Something Went Wrong</h1>
-      <p>We cannot seen to find the page you are looking for.</p>
+      <p>We cannot seem to find the page you are looking for</p>
       <div className="btn-container-failure">
         <button
           className="failure-btn"

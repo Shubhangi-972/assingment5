@@ -24,7 +24,7 @@ const JobCardItem = props => {
               <img
                 className="compony-logo"
                 src={companyLogoUrl}
-                alt="compony logo"
+                alt="company logo"
               />
               <div className="title-rating-container">
                 <h1 className="title-heading">{title}</h1>

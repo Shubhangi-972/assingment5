@@ -115,7 +115,7 @@ class AllJobs extends Component {
     if (response.ok === true) {
       const filteredJobsList = data.jobs.map(each => ({
         id: each.id,
-        componyLogoUrl: each.company_logo_url,
+        companyLogoUrl: each.company_logo_url,
         employmentType: each.employment_type,
         jobDescription: each.job_description,
         location: each.location,
@@ -184,7 +184,7 @@ class AllJobs extends Component {
     )
   }
 
-  onSuccessJobView = () => {
+  onSuccessJobsView = () => {
     const {jobsData} = this.state
     const noOfJobs = jobsData.length > 0
     return noOfJobs ? (
@@ -239,7 +239,7 @@ class AllJobs extends Component {
             type="button"
             onClick={this.onRetryJobs}
           >
-            Retry
+            retry
           </button>
         </div>
       </div>
@@ -311,7 +311,7 @@ class AllJobs extends Component {
       case apiStatusConstants.failure:
         return this.onFailJobsView()
       case apiStatusConstants.success:
-        return this.onSuccessJobView()
+        return this.onSuccessJobsView()
       default:
         return null
     }

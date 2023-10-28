@@ -6,8 +6,8 @@ const SimilarJobs = props => {
   const {similarJobData} = props
   const {
     companyLogoUrl,
-    employmentType,
     jobDescription,
+    employmentType,
     location,
     rating,
     title,
@@ -21,7 +21,7 @@ const SimilarJobs = props => {
         <img
           className="compony-job-logo"
           src={companyLogoUrl}
-          alt="similar job compony logo"
+          alt="similar job company logo"
         />
         <div className="title-job-rating-container">
           <h1 className="title-job-heading">{title}</h1>
